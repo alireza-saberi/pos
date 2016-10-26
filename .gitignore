@@ -1,0 +1,4 @@
+_Store
+*.back
+node_modules
+config
