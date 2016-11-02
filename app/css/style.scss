@@ -1,0 +1,74 @@
+/*
+* @Author: alireza-saberi
+* @Date:   2016-11-02 12:20:51
+* @Last Modified by:   alireza-saberi
+* @Last Modified time: 2016-11-02 14:00:36
+*/
+
+// variables
+$body-color: rgb(10, 98, 66);
+$menu-color: rgb(6, 78, 53);
+$screen-xs-max: 425px;
+
+// mixins
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin box-shadow($type, $top, $leftright, $bottom, $color) {
+    -webkit-box-shadow: $type, $top, $leftright, $bottom, $color;
+    -moz-box-shadow: $type, $top, $leftright, $bottom, $color;
+    -ms-box-shadow: $type, $top, $leftright, $bottom, $color;
+    box-shadow: $type, $top, $leftright, $bottom, $color;
+}
+
+body {
+    background-color: $body-color;
+}
+
+.halfblock {
+    display: inline-block;
+    width: 48%;
+}
+
+.btn-lg {
+    min-width: 10%;
+}
+
+.container {
+    background-color: $menu-color;
+    color: white;
+}
+
+legend {
+    color: white;
+}
+
+input.pull-right {
+    color: black;
+    border: 1px solid #ccc;
+    @include border-radius(4px);
+    @include box-shadow(inset, 0, 1px, 1px, rgba(0, 0, 0, .075));
+}
+
+h4.modal-title{
+        color: black;
+}
+
+div.modal-body {
+        color: black;
+}
+
+@media (max-width: $screen-xs-max) {
+    .halfblock {
+        display: inline-block;
+        width: 100%;
+    }
+    .product {
+        margin-bottom: 35px;
+    }
+}
+

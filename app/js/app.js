@@ -2,7 +2,7 @@
 * @Author: alireza-saberi
 * @Date:   2016-10-30 23:29:55
 * @Last Modified by:   alireza-saberi
-* @Last Modified time: 2016-11-01 21:38:42
+* @Last Modified time: 2016-11-02 12:11:41
 */
 var espressos = {  type:  'Espresso',
                    varieties: [{    name:'Caffè Mocha',
@@ -148,23 +148,19 @@ var app = new Vue({
         total: 0
     },
     methods: {
-        pay : function(){
+        order : function(){
             var main_price = 0, side_price = 0;
             for (var i = 0; i < this.drinks.length; i++ ){
                 for(var j = 0; j < this.drinks[i].varieties.length; j++){
                     main_price = main_price + (this.drinks[i].varieties[j].baseprice) * (this.drinks[i].varieties[j].count);
-                    // console.log(main_price);
                     for(var k = 0; k < this.drinks[i].varieties[j].modifiers.length; k++){
                         side_price = side_price + (this.drinks[i].varieties[j].modifiers[k].price * this.drinks[i].varieties[j].modifiers[k].count);
-                        // console.log(side_price);
                     }
-                    // console.log(main_price);
                 }
-                // console.log(this.drinks[i].varieties.length);
             }
             this.total = main_price + side_price;
-            console.log("-----total price is----");
-            console.log('$' + this.total.toFixed(2));
+            // console.log("-----total price is----");
+            // console.log('$' + this.total.toFixed(2));
             }
     }
 });

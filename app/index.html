@@ -10,33 +10,61 @@
         <link rel="icon" type="image/png" size="16x16" href="img/icon.png">
         <!--build:css /css/style.min.css-->
         <link rel="stylesheet" href="js/node_modules/bootstrap/dist/css/bootstrap.css">
-        <!-- <link rel="stylesheet" href="css/style.css"> -->
+        <link rel="stylesheet" href="css/style.css">
         <!--/build-->
     </head>
     <body>
         <div class="container">
             <div id="app" class="row">
-                <h1>Ali Coffee Shop</h1>
+                <h1 class="text-center">Ali Coffee Shop</h1>
                 <fieldset v-for="drink in drinks">
-                    <legend> {{ drink.type }} </legend>
+                    <legend class="text-center"> {{ drink.type }} </legend>
                         <div class="col-xs-6" v-for="product in drink.varieties">
                             <div class="row">
-                                <div class="col-xs-4"><img class="img-responsive" v-bind:src="product.src"></div>
-                                <div class="col-xs-8">
-                                    <div>Name: {{ product.name }}</div>
-                                    <div>Number: <input type="number" min="0" v-model="product.count"></div>
-                                    <div>Base Price: {{ product.baseprice }}</div>
-                                    
-                                    <div v-for="modifier in product.modifiers"> 
-                                        {{ modifier.name }}
-                                        {{ modifier.price }}
-                                        <input type="number" min="0" v-model="modifier.count">
+                                <div class="col-xs-4"><img class="img-responsive img-rounded" v-bind:src="product.src"></div>
+                                <form class="col-xs-8">
+                                    <div class="form-group">
+                                        <label v-bind:for="product.name">{{ product.name }} - $ {{ product.baseprice }}</label>
+                                        <input type="number" min="0" v-bind:id="product.name" class="form-control" v-model="product.count">
                                     </div>
-                                </div>
+                                    <div v-for="modifier in product.modifiers">
+                                            <div class="form-group">
+                                                <label class="halfblock" v-bind:for="modifier.name">{{ modifier.name }} - $ {{ modifier.price }}</label>
+                                                <input class="halfblock pull-right" type="number" min="0" class="form-control" v-bind:id="modifier.name" v-model="modifier.count">
+                                            </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                 </fieldset>
-                <a v-on:click="pay">Pay</a>
+                    
+                <button class="btn btn-success btn-lg center-block" data-toggle="modal" data-target="#myModal" v-on:click="order">Order</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="order confirmation">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Confirmation of Order</h4>
+                      </div>
+                      <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xs-6 text-left">Subtotal</div>
+                            <div class="col-xs-6 text-right"> ${{ total.toFixed(2) }}</div>
+                            <div class="col-xs-6 text-left">HST ($):</div>
+                            <div class="col-xs-6 text-right"> ${{ (total*0.13).toFixed(2) }}</div>
+                            <div class="col-xs-6 text-left"><strong>Total</strong></div>
+                            <div class="col-xs-6 text-right"><strong>${{ (total*1.13).toFixed(2) }}</strong></div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-success">Pay</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
           <!--build:js /js/script.min.js-->
             <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
