@@ -35,6 +35,11 @@
     "grunt-processhtml": "^0.4.1",
     "jquery": "^3.1.1",
     "jsdoc": "^3.4.2",
-    "vue": "^2.0.3"
+    "vue": "^2.0.3",
+    "vue-router": "^2.0.1"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "vue-router": "^2.0.1"
   }
 }

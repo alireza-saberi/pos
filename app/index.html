@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Basic POS app">
+        <meta name="keywords" content="pos, vuejs, MVVM">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Welcome to our coffee shop!</title>
+
+        <link rel="icon" type="image/png" size="16x16" href="img/icon.png">
+        <!--build:css /css/style.min.css-->
+        <link rel="stylesheet" href="js/node_modules/bootstrap/dist/css/bootstrap.css">
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
+        <!--/build-->
+    </head>
+    <body>
+        <div class="container">
+            <div id="app" class="row">
+                <h1>Ali Coffee Shop</h1>
+                <fieldset v-for="drink in drinks">
+                    <legend> {{ drink.type }} </legend>
+                        <div class="col-xs-6" v-for="product in drink.varieties">
+                            <div class="row">
+                                <div class="col-xs-4"><img class="img-responsive" v-bind:src="product.src"></div>
+                                <div class="col-xs-8">
+                                    <div>Name: {{ product.name }}</div>
+                                    <div>Number: <input type="number" min="0" v-model="product.count"></div>
+                                    <div>Base Price: {{ product.baseprice }}</div>
+                                    
+                                    <div v-for="modifier in product.modifiers"> 
+                                        {{ modifier.name }}
+                                        {{ modifier.price }}
+                                        <input type="number" min="0" v-model="modifier.count">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </fieldset>
+                <a v-on:click="pay">Pay</a>
+            </div>
+          <!--build:js /js/script.min.js-->
+            <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
+            <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+            <script src="../node_modules/vue-router/dist/vue-router.js"></script>
+            <script type="text/javascript" src="js/app.js"></script>
+        <!--/build-->
+        </div>
+    </body>
+</html>
