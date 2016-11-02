@@ -19,8 +19,8 @@
                 <h1 class="text-center">Ali Coffee Shop</h1>
                 <fieldset v-for="drink in drinks">
                     <legend class="text-center"> {{ drink.type }} </legend>
-                        <div class="col-xs-6" v-for="product in drink.varieties">
-                            <div class="row">
+                        <div class="col-xs-12 col-sm-6" v-for="product in drink.varieties">
+                            <div class="row product">
                                 <div class="col-xs-4"><img class="img-responsive img-rounded" v-bind:src="product.src"></div>
                                 <form class="col-xs-8">
                                     <div class="form-group">
