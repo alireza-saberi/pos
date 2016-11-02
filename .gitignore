@@ -1,4 +1,6 @@
-_Store
+*~
+DS_Store
 *.back
 node_modules
 config
+.sass-cache
