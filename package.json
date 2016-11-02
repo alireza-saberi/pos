@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "express": "^4.14.0",
+    "grunt-contrib-sass": "^1.0.0",
     "vue-resource": "^1.0.3",
     "vue-router": "^2.0.1"
   }

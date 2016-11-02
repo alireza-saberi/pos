@@ -2,7 +2,7 @@
 * @Author: alireza-saberi
 * @Date:   2016-10-30 23:29:55
 * @Last Modified by:   alireza-saberi
-* @Last Modified time: 2016-11-02 16:40:15
+* @Last Modified time: 2016-11-02 17:20:47
 */
 var espressos = {  type:  'Espresso',
                    varieties: [{    name:'Caffè Mocha',
@@ -171,6 +171,14 @@ var app = new Vue({
         //     }, function(error){
         //         // error callback
         //         console.log("No drink for you today!");
+        //     });
+        // }
+        // ,
+        // buy : function(){
+        //     this.$http.get('/pay', this.total).then(function(reposonce){
+        //         console.log("Payment is done");
+        //     }, function(error){
+        //         console.log("Error in payment");
         //     });
         // }
     }
