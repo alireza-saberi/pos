@@ -16,8 +16,8 @@ Evaluation your JavaScript knowledge and design in a simple model–view–viewm
 you have not previously used.
 
 ## Demo
-[large-view](demo1.gif)
-[phone-view](demo2.gif)
+![large-view](demo1.gif)
+![phone-view](demo2.gif)
 
 ## APIs and technologies
 * HTML5, CSS, JS, [Bootstrap](http://getbootstrap.com/): frone-end
