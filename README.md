@@ -28,13 +28,17 @@ you have not previously used.
 * [Gruntjs](http://gruntjs.com/): automation
 
 ## How to make it work on your machine after cloning on your local
-* For development, you need sass on your system checkout [here](http://sass-lang.com/install).
-* `npm install` will install all dependencies for the project.
-* You have folder `dev`, for development.
-* Install grunt-cli globally by typing `npm install -g grunt-cli`.
-* In development mode, run `grunt watch` for automation purposes.
-* If you just want to run the dstrubution version of the project, type `node server.js` or `npm start` in terminal, and in the browser url, type `http://localhost:3000/`
-
+- For development, go to `dev` folder and
+  - you need sass on your system checkout [here](http://sass-lang.com/install).
+  - `npm install` will install all dependencies for the project.
+  - Install grunt-cli globally by typing `npm install -g grunt-cli`.
+  - run `grunt watch` for automation purposes.
+- To run the distrubution version of the project
+  - type `node server.js` or `npm start` in terminal, and in the browser url, type `http://localhost:3000/`
+  - or double click on index file
+- For documentation
+  - Very simple documentation is provided using jsdoc in `out` folder
+  
 ## License
 
 The contents of this repository are covered under the [MIT License](LICENSE.txt).
