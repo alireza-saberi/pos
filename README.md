@@ -28,7 +28,7 @@ you have not previously used.
 * [Gruntjs](http://gruntjs.com/): automation
 
 ## How to make it work on your machine after cloning on your local
-- For development, go to `dev` folder and
+- For development, go to `app` folder and
   - you need sass on your system checkout [here](http://sass-lang.com/install).
   - `npm install` will install all dependencies for the project.
   - Install grunt-cli globally by typing `npm install -g grunt-cli`.
