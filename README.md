@@ -27,9 +27,13 @@ you have not previously used.
 * [Express](http://expressjs.com/): back-end
 * [Gruntjs](http://gruntjs.com/): automation
 
-## How to make it work on your machine
-...
-
+## How to make it work on your machine after cloning on your local
+* For development, you need sass on your system checkout [here](http://sass-lang.com/install).
+* `npm install` will install all dependencies for the project.
+* You have folder `dev`, for development.
+* Install grunt-cli globally by typing `npm install -g grunt-cli`.
+* In development mode, run `grunt watch` for automation purposes.
+* If you just want to run the dstrubution version of the project, type `node server.js` or `npm start` in terminal, and in the browser url, type `http://localhost:3000/`
 
 ## License
 
